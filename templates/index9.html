@@ -102,6 +102,25 @@ td {
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
+
+
+select {
+    border: 1px solid #90A4AE; /* Blue Grey */
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #ECEFF1; /* Light Blue Grey */
+    color: #424242; /* Dark Gray */
+    width: auto;
+    font-size: 16px; /* larger font size for mobile */
+    max-width: 300px;
+}
+
+@media (min-width: 600px) { /* When screen is larger than 600px */
+    select {
+        font-size: 14px; /* smaller font size for larger screens */
+    }
+}
+
 </style>
 
    <script>
@@ -149,7 +168,7 @@ function appendResponse(response, el, isAdditional = false) {
 </head>
 <body>
 
-<form method="POST",  style="display: flex; gap: 20px;">
+<form method="POST">
         <select name="condition">
             {% for condition in conditions %}
             <option value="{{ condition }}" {% if condition == selected_condition %}selected{% endif %}>{{ condition }}</option>
